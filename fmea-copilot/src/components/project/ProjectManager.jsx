@@ -341,7 +341,12 @@ const ProjectManager = ({ onProjectSelected, currentProject }) => {
   };
 
   return (
-    <Paper sx={{ p: 3 }}>
+    <Box sx={{ 
+      height: '100%', 
+      display: 'flex', 
+      flexDirection: 'column',
+      overflow: 'auto'
+    }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Typography variant="h4" component="h1">
           Project Manager
@@ -704,7 +709,7 @@ const ProjectManager = ({ onProjectSelected, currentProject }) => {
           <Button onClick={() => setStatsDialogOpen(false)}>Close</Button>
         </DialogActions>
       </Dialog>
-    </Paper>
+    </Box>
   );
 };
 

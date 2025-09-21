@@ -32,15 +32,32 @@ const theme = createTheme({
 // Tab panel component
 function TabPanel({ children, value, index, ...other }) {
   return (
-    <div
+    <Box
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
+      sx={{
+        flexGrow: 1,
+        display: value === index ? 'flex' : 'none',
+        flexDirection: 'column',
+        height: '100%',
+        overflow: 'auto'
+      }}
       {...other}
     >
-      {value === index && <Box sx={{ pt: 3 }}>{children}</Box>}
-    </div>
+      {value === index && (
+        <Box sx={{ 
+          flexGrow: 1, 
+          display: 'flex', 
+          flexDirection: 'column',
+          p: 3,
+          height: '100%'
+        }}>
+          {children}
+        </Box>
+      )}
+    </Box>
   );
 }
 

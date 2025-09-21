@@ -1,22 +1,29 @@
 import React from 'react';
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import Header from './Header';
 
 const Layout = ({ children }) => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <Box sx={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      height: '100vh',
+      width: '100vw',
+      overflow: 'hidden'
+    }}>
       <Header />
-      <Container 
-        maxWidth="xl" 
+      <Box 
         sx={{ 
           flexGrow: 1, 
-          py: 3,
           display: 'flex',
-          flexDirection: 'column'
+          flexDirection: 'column',
+          overflow: 'auto',
+          width: '100%',
+          height: '100%'
         }}
       >
         {children}
-      </Container>
+      </Box>
     </Box>
   );
 };
